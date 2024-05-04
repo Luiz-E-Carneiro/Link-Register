@@ -39,7 +39,7 @@
                     </div>
                 </li>
                 <li>Hertead</li>
-                <li>Tags</li>
+                <li>Pages</li>
                 <li>Item</li>
                 <li>Item</li>
             </ul>
