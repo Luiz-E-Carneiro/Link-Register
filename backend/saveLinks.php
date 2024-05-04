@@ -25,11 +25,10 @@ if(!isset($_POST['link'])){
     }
 
     if(isset($_SESSION['link'])) {
-        $_SESSION['link'][] = $linkData;;
+        $_SESSION['link'][] = $linkData;
     } else {
-        $_SESSION['link'] = $linkData;;
+        $_SESSION['link'] = $linkData;
     }
     
     // header('Location:./../frontend/index.php');
 }
-?>
