@@ -23,6 +23,9 @@
             <button>Home</button>
             <button>About</button>
             <button>Contact</button>
+            <form action="./../backend/destroySession.php" method="get">
+                <input type="submit" value="Destroy Session">
+            </form>
         </div>
 
     </header>
@@ -46,6 +49,19 @@
         </div>
 
         <nav class="navigation">
+            <?php
+                session_start();
+                require_once('./../backend/classes/Card.php');
+                
+                if(isset($_SESSION['links'])) {
+                    foreach ($_SESSION['links'] as $linkData) {
+                        $card = new Card($linkData);
+                        $card->renderCard();
+                    }
+                } else {
+                    echo "<img src='./../assets/images/noLink.png' alt='There is no link'>";
+                }
+            ?>
 
         </nav>
 

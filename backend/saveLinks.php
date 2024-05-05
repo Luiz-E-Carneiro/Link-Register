@@ -9,7 +9,7 @@ $propertiesToCheck = [
     'title', 'description', 'code',
     'providerName',  'authorName',
     'language', 'url', 'image',
-    'providerUrl', 'icon', 'favicon',
+    'providerUrl', 'favicon',
     'authorUrl'
     ];
 
@@ -18,14 +18,17 @@ if(!isset($_POST['link'])){
 } else {
     $link = $_POST['link'];
     
-    if(!newLinkCheck($link)){
+    if(newLinkCheck($link)){
         header('Location: ./../frontend/index.php?erro=2');
         die();
     }
     
     $info = $embed->get($link);
     
-    $linkData = array('link' => $link);
+    $linkData = array(
+        'link' => $link,
+        'heart' => false
+    );
 
     foreach($propertiesToCheck as $property) {
         $value = (string) $info->$property;
@@ -40,17 +43,19 @@ if(!isset($_POST['link'])){
         }
     }
     
-    if(isset($_SESSION['link'])) {
-        $_SESSION['link'][] = $linkData;
+    if(isset($_SESSION['links'])) {
+        $linkData['id'] = count($_SESSION['links']);
+        $_SESSION['links'][] = $linkData;
     } else {
-        $_SESSION['link'] = array($linkData);
+        $linkData['id'] = 0;
+        $_SESSION['links'] = array($linkData);
     }
     
     header('Location: ./../frontend/index.php');
 }
 
 function newLinkCheck($link) {
-    foreach ($_SESSION['link'] as $linkData) {
+    foreach ($_SESSION['links'] as $linkData) {
         foreach ($linkData as $property => $value) {
             if($property === 'link') {
                 if($value === $link){
