@@ -1,0 +1,50 @@
+.sidebar {
+    width: 10em;
+    height: 25em;
+    background-color: white;
+    position: sticky;
+    left: 1.5em;
+    top: calc(50% - 10em);
+    padding: 5px 3px;
+}
+
+.sidebar > ul {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+}
+
+.sidebar > ul > li:first-of-type  {
+    flex: 2;
+}
+
+.sidebar > ul > li  {
+    flex: 1;
+}
+
+.sidebar > ul > li > form{
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar > ul > li > form > button  {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    background-color: transparent;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+.sidebar > ul > li > form > button:hover  {
+    background-color: #cadeef;
+}
+.sidebar > ul > li > form > button > img {
+    width: 36px;
+}

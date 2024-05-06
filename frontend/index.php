@@ -7,6 +7,8 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./CSS/page.css">
+    <link rel="stylesheet" href="./CSS/sidebar.css">
+    <link rel="stylesheet" href="./CSS/linkArea.css">
     <link rel="stylesheet" href="./CSS/card.css">
     <title>Link Register</title>
 </head>
@@ -42,26 +44,58 @@
                         Edit_Icon
                     </div>
                 </li>
-                <li>Main</li>
-                <li>Hertead</li>
-                <li>Folders</li>
-                <li>Languages</li>
+                <li>
+                    <form action="changeNav.php" method="post">
+                        <input type="hidden" name="nav" value="main">
+                        <button type="submit">
+                            <img src="./../assets/icons/home.png" alt="Home icon">
+                            <span>Main</span>
+                        </button>
+                    </form>
+                </li>
+                <li>
+                    <form action="changeNav.php" method="post">
+                        <input type="hidden" name="nav" value="heart">
+                        <button type="submit">
+                            <img src="./../assets/icons/heart.png" alt="Heart icon">
+                            <span>Hearted</span>
+                        </button>
+                    </form>
+                </li>
+                <li>
+                    <form action="changeNav.php" method="post">
+                        <input type="hidden" name="nav" value="folders">
+                        <button type="submit">
+                            <img src="./../assets/icons/folders.png" alt="Folder icon">
+                            <span>Folders</span>
+                        </button>
+                    </form>
+                </li>
+                <li>
+                    <form action="changeNav.php" method="post">
+                        <input type="hidden" name="nav" value="lang">
+                        <button type="submit">
+                            <img src="./../assets/icons/langs.png" alt="Language icon">
+                            <span>Languages</span>
+                        </button>
+                    </form>
+                </li>
             </ul>
         </div>
 
         <div class="navigation">
             <?php
-                session_start();
-                require_once('./../backend/classes/Card.php');
-                
-                if(isset($_SESSION['links'])) {
-                    foreach ($_SESSION['links'] as $linkData) {
-                        $card = new Card($linkData);
-                        $card->renderCard();
-                    }
-                } else {
-                    echo "<img src='./../assets/images/noLink.png' alt='There is no link'>";
+            session_start();
+            require_once ('./../backend/classes/Card.php');
+
+            if (isset($_SESSION['links'])) {
+                foreach ($_SESSION['links'] as $linkData) {
+                    $card = new Card($linkData);
+                    $card->renderCard();
                 }
+            } else {
+                echo "<img src='./../assets/images/noLink.png' alt='There is no link'>";
+            }
             ?>
 
         </div>
@@ -76,7 +110,6 @@
                 <form action="./../backend/saveLinks.php" method="post">
                     <input type="text" name="link" class="link-input" id="link-input">
                     <button type="submit" class="register-link" id="register-link">Register Link</button>
-    
                 </form>
             </div>
         </div>

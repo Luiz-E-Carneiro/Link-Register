@@ -34,46 +34,10 @@ main {
     position: relative;
 }
 
-.sidebar {
-    width: 10em;
-    height: 25em;
-    background-color: white;
-    position: sticky;
-    left: 1.5em;
-    top: calc(50% - 10em);
-}
-
-.sidebar > ul {
-    list-style-type: none;
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
 .navigation{
     background-color: white;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     width: 50em;
-}
-
-.add-link-area{ 
-    width: 18em;
-    height: 25em;
-    background-color: white;
-    position: relative;
-    position: sticky;
-    right: 1.5em;
-    top: calc(50% - 10em);
-}
-
-.adding-link {
-    position: absolute;
-    visibility: hidden;
-}
-
-.before-add-link {
-    display: flex;
 }

@@ -1,0 +1,17 @@
+.add-link-area{ 
+    width: 18em;
+    height: 25em;
+    background-color: white;
+    position: relative;
+    position: sticky;
+    right: 1.5em;
+    top: calc(50% - 10em);
+}
+.adding-link {
+    position: absolute;
+    visibility: hidden;
+}
+
+.before-add-link {
+    display: flex;
+}

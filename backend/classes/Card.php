@@ -62,9 +62,9 @@ final class Card
         <form method="post" action="./../backend/delete.php">
         <input type="hidden" name="link" value="'. $this->linkData['link'] . '">
             <button type="submit">
-            <img src= "./../assets/icons/trash.png" alt="Heart icon">
+                <img src= "./../assets/icons/trash.png" alt="Heart icon">
             </button>
-            </form>
+        </form>
             ';
             
             $card .= "</div>";
