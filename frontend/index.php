@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./CSS/page.css">
+    <link rel="stylesheet" href="./CSS/card.css">
     <title>Link Register</title>
 </head>
 
@@ -41,14 +42,14 @@
                         Edit_Icon
                     </div>
                 </li>
+                <li>Main</li>
                 <li>Hertead</li>
-                <li>Pages</li>
-                <li>Item</li>
-                <li>Item</li>
+                <li>Folders</li>
+                <li>Languages</li>
             </ul>
         </div>
 
-        <nav class="navigation">
+        <div class="navigation">
             <?php
                 session_start();
                 require_once('./../backend/classes/Card.php');
@@ -63,7 +64,7 @@
                 }
             ?>
 
-        </nav>
+        </div>
 
         <div class="add-link-area" id="link-area">
             <button class="before-add-link" id="before-add-link">

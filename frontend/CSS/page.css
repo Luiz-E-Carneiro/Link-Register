@@ -9,6 +9,7 @@ body {
     height: 100%;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     position: relative;
 }
 
@@ -18,12 +19,12 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 4.5em;
-    position: absolute;
+    position: sticky;
     width: 100%;
     top: 0;
 }
 main {
-    padding: 4.5em 1em 0;
+    padding: 0 1em 0;
     display: flex;
     gap: 1em;
     flex-direction: row;
@@ -47,7 +48,9 @@ main {
 
 .navigation{
     background-color: white;
-    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50em;
 }
 
 .add-link-area{ 

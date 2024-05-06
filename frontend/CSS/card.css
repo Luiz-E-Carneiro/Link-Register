@@ -1,0 +1,66 @@
+.card {
+    min-width: calc(100%/3.2);
+    width: calc(100%/3.2);
+    margin: 10px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .7);
+    font-size: .8rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.card > div >  form > button{
+    background-color: transparent;
+    border: none;
+}
+
+.card > div > a, .footer-card > div > a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0784b5;
+}
+
+.header-card {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.header-card > form > button > img {
+    width: 32px;
+    cursor: pointer;
+}
+
+.header-card > img {
+    width: 32px;
+}
+
+.content-card {
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+}
+
+.content-card > img {
+    width: 100%;
+}
+
+.footer-card {
+    display: flex;
+}
+
+.footer-card > div {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.footer-card > form > button > img {
+    width: 30px;
+    cursor: pointer;
+}
