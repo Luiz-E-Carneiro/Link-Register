@@ -2,10 +2,15 @@
 
 session_start();
 
-if(!isset($_POST['linkId'])){
+if(!isset($_POST['link'])){
     header('Location: ./../frontend/index.php?erro=4');
 } else {
-    $id = $_POST['linkId'];
-    array_splice($_SESSION['links'], $id, 1);
-    header('Location: ./../frontend/index.php');
+    $link = $_POST['link'];
+
+    for ($i=0; $i < count($_SESSION['links']); $i++) { 
+        if($_SESSION['links'][$i]['link'] === $link){
+            array_splice($_SESSION['links'], $i, 1);
+        }
+    }
+    header("Location: ./../frontend/index.php");
 }

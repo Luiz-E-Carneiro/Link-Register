@@ -44,10 +44,8 @@ if(!isset($_POST['link'])){
     }
     
     if(isset($_SESSION['links'])) {
-        $linkData['id'] = count($_SESSION['links']);
         $_SESSION['links'][] = $linkData;
     } else {
-        $linkData['id'] = 0;
         $_SESSION['links'] = array($linkData);
     }
     

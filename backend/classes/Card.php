@@ -19,7 +19,7 @@ final class Card
         }
         $card .= 
         '<form method="post" action="./../backend/heart.php">
-            <input type="hidden" name="linkId" value="'. $this->linkData['id'] . '">
+            <input type="hidden" name="link" value="'. $this->linkData['link'] . '">
             <button type="submit"> 
                 <img src= '. 
                     ($this->linkData['heart'] === false ? "./../assets/icons/emptyHeart.png" : "./../assets/icons/redHeart.png")
@@ -60,7 +60,7 @@ final class Card
 
         $card .= '
         <form method="post" action="./../backend/delete.php">
-        <input type="hidden" name="linkId" value="'. $this->linkData['id'] . '">
+        <input type="hidden" name="link" value="'. $this->linkData['link'] . '">
             <button type="submit">
             <img src= "./../assets/icons/trash.png" alt="Heart icon">
             </button>

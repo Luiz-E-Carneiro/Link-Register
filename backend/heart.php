@@ -2,10 +2,14 @@
 
 session_start();
 
-if(!isset($_POST['linkId'])){
+if(!isset($_POST['link'])){
     header('Location: ./../frontend/index.php?erro=3');
 } else {
-    $id = $_POST['linkId'];
-    $_SESSION['links'][$id]['heart'] === true ? $_SESSION['links'][$id]['heart'] = false : $_SESSION['links'][$id]['heart'] = true;
+    $link = $_POST['link'];
+    for ($i=0; $i < count($_SESSION['links']); $i++) { 
+        if($_SESSION['links'][$i]['link'] === $link){
+            $_SESSION['links'][$i]['heart'] === true ? $_SESSION['links'][$i]['heart'] = false : $_SESSION['links'][$i]['heart'] = true;
+        }
+    }
     header('Location: ./../frontend/index.php');
 }
