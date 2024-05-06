@@ -13,15 +13,23 @@ $propertiesToCheck = [
     'authorUrl'
     ];
 
+function newLinkCheck($link) {
+    if(isset($_SESSION['links'])){
+        foreach ($_SESSION['links'] as $linkData) {
+            if($linkData['link'] === $link){
+                header('Location: ./../frontend/index.php?erro=2');
+                die();
+            }
+        }
+    }
+}
+
 if(!isset($_POST['link'])){
     header('Location: ./../frontend/index.php?erro=1');
 } else {
     $link = $_POST['link'];
     
-    if(newLinkCheck($link)){
-        header('Location: ./../frontend/index.php?erro=2');
-        die();
-    }
+    newLinkCheck($link);
     
     $info = $embed->get($link);
     
@@ -50,16 +58,4 @@ if(!isset($_POST['link'])){
     }
     
     header('Location: ./../frontend/index.php');
-}
-
-function newLinkCheck($link) {
-    foreach ($_SESSION['links'] as $linkData) {
-        foreach ($linkData as $property => $value) {
-            if($property === 'link') {
-                if($value === $link){
-                    return false;
-                }
-            }
-        }
-    }
 }
