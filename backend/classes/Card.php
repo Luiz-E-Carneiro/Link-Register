@@ -44,7 +44,7 @@ final class Card
         
         $card .= '<div>';        
         if(isset($this->linkData['authorName'])) {
-            $card .= '<a href='. $this->linkData['authorUrl'] .'>By' . $this->linkData['authorName'] . '</a>';
+            $card .= '<a href='. $this->linkData['authorUrl'] .'>By ' . $this->linkData['authorName'] . '</a>';
         }
         if(isset($this->linkData['url'])) {
             $card .= '<a href='. $this->linkData['url'] .'>Go to Webpage</a>';

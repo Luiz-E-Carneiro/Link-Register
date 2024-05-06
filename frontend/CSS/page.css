@@ -27,8 +27,8 @@ header {
 main {
     padding: 0 1em 0;
     display: flex;
-    gap: 1em;
     flex-direction: row;
+    justify-content: space-between;
     background-color: #cadeef;
     flex-grow: 1;
     position: relative;
@@ -39,7 +39,7 @@ main {
     height: 25em;
     background-color: white;
     position: sticky;
-    left: 1em;
+    left: 1.5em;
     top: calc(50% - 10em);
 }
 
@@ -54,6 +54,7 @@ main {
 .navigation{
     background-color: white;
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     width: 50em;
 }
@@ -64,7 +65,7 @@ main {
     background-color: white;
     position: relative;
     position: sticky;
-    right: 1em;
+    right: 1.5em;
     top: calc(50% - 10em);
 }
 
