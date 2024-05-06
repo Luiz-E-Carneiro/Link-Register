@@ -22,6 +22,7 @@ header {
     position: sticky;
     width: 100%;
     top: 0;
+    z-index: 2;
 }
 main {
     padding: 0 1em 0;
@@ -30,12 +31,16 @@ main {
     flex-direction: row;
     background-color: #cadeef;
     flex-grow: 1;
+    position: relative;
 }
 
 .sidebar {
     width: 10em;
     height: 25em;
     background-color: white;
+    position: sticky;
+    left: 1em;
+    top: calc(50% - 10em);
 }
 
 .sidebar > ul {
@@ -58,6 +63,9 @@ main {
     height: 25em;
     background-color: white;
     position: relative;
+    position: sticky;
+    right: 1em;
+    top: calc(50% - 10em);
 }
 
 .adding-link {
