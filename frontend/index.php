@@ -120,7 +120,7 @@
                         echo '<select name="selectFolder">';
                         echo '<option value="none" selected>none</option>';
                         foreach ($_SESSION['foldersNames'] as $name => $data) {
-                            echo "<option value=$name>$name</option>";
+                            echo "<option value='$name'>$name</option>";
                         }
                         echo'</select>';
 

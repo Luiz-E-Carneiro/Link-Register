@@ -1,6 +1,8 @@
 # Directory
 vendor
 
+test
+
 # Files
 *.json
 *.txt

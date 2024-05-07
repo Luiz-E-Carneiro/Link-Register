@@ -59,9 +59,10 @@ if(!isset($_POST['link'])){
     
     if(isset($_POST['selectFolder']) AND $_POST['selectFolder'] != 'none'){
         $name = $_POST['selectFolder'];
-        $_SESSION['foldersNames'][$name] = array_merge($_SESSION['foldersNames'][$name], $linkData);
+        $_SESSION['foldersNames'][$name] = true;
+        $_SESSION['folders'][$name] = $linkData;
     }else {
-        header('Location: ./../frontend/index.php?BRUH=BRUUH');
+        header('Location: ./../frontend/index.php?');
         die();
     }
 

@@ -10,7 +10,7 @@
 
 .folder-div{
     margin: 0 1em;
-    width: calc(100%/4);
+    max-width: calc(100%/4);
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -18,13 +18,30 @@
     gap: 1em;
 }
 
-.folder-div > p {
+.btn-folder, .btn-folder > img {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    border: none;
+}
+
+.btn-folder > p {
     font-size: 1.2rem;
     overflow: hidden; 
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.folder-div > img {
-    width: 100%;
+.btn-folder {
+    box-sizing: unset;
+    border-radius: 7px;
+    padding: 10px;
+    transition: .2s ease-in-out;
+}
+
+.btn-folder:hover {
+    background-color: #cadeef;
 }

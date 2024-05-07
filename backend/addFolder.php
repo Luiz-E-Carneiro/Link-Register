@@ -8,13 +8,13 @@ if (!isset($_POST['folderName'])) {
     $name = $_POST['folderName'];
     
     if(!isset($_SESSION['foldersNames'])){
-        $_SESSION['foldersNames'][$name] = array();
+        $_SESSION['foldersNames'][$name] = false;
     }else {
         if(key_exists($name,$_SESSION['foldersNames'] )){
             header('Location: ./../frontend/index.php?nav=folders&error=6');
             die();
         }else {
-            $_SESSION['foldersNames'][$name] = [];
+            $_SESSION['foldersNames'][$name] = false;
         }
     }
     header('Location: ./../frontend/index.php?nav=folders');
