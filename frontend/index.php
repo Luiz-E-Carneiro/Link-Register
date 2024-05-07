@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./CSS/sidebar.css">
     <link rel="stylesheet" href="./CSS/linkArea.css">
     <link rel="stylesheet" href="./CSS/card.css">
+    <link rel="stylesheet" href="./CSS/folder.css">
     <title>Link Register</title>
 </head>
 
@@ -78,26 +79,27 @@
             <?php
             session_start();
             require_once ('./../backend/classes/Card.php');
+            require_once ('./../backend/classes/Folder.php');
 
-            if(isset($_GET['nav'])){
+            if (isset($_GET['nav'])) {
                 switch ($_GET['nav']) {
                     case 'main':
-                        require_once('./../backend/pages/Main.php');
+                        require_once ('./../backend/pages/Main.php');
                         break;
-                        case 'hearts':
-                            require_once('./../backend/pages/HeartedLinks.php');
-                            break;
-                        case 'folders':
-                            require_once('./../backend/pages/Folders.php');
-                            break;
-                        default:
-                            require_once('./../backend/pages/Main.php');
+                    case 'hearts':
+                        require_once ('./../backend/pages/HeartedLinks.php');
+                        break;
+                    case 'folders':
+                        require_once ('./../backend/pages/Folders.php');
+                        break;
+                    default:
+                        require_once ('./../backend/pages/Main.php');
                         break;
                 }
 
-            }elseif(!isset($_GET['nav'])) {
-                require_once('./../backend/pages/Main.php');
-            } 
+            } elseif (!isset($_GET['nav'])) {
+                require_once ('./../backend/pages/Main.php');
+            }
 
             ?>
 
@@ -112,6 +114,21 @@
                 <button class="back" id="back">x</button>
                 <form action="./../backend/saveLinks.php" method="post">
                     <input type="text" name="link" class="link-input" id="link-input">
+                    
+                    <?php
+                    if(isset($_SESSION['foldersNames'])){
+                        echo '<select name="selectFolder">';
+                        echo '<option value="none" selected>none</option>';
+                        foreach ($_SESSION['foldersNames'] as $name => $data) {
+                            echo "<option value=$name>$name</option>";
+                        }
+                        echo'</select>';
+
+                    } else {
+                        echo "<p>You have to add a folder first in order to register a link!</p>";
+                    }
+  
+                        ?>
                     <button type="submit" class="register-link" id="register-link">Register Link</button>
                 </form>
             </div>

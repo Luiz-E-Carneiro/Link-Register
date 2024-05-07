@@ -1,0 +1,30 @@
+.add-folder-area{
+    background-color: #9bd4e4;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.folder-div{
+    margin: 0 1em;
+    width: calc(100%/4);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.folder-div > p {
+    font-size: 1.2rem;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.folder-div > img {
+    width: 100%;
+}
