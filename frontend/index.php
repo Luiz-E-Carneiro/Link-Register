@@ -45,7 +45,7 @@
                     </div>
                 </li>
                 <li>
-                    <form action="changeNav.php" method="post">
+                    <form action="./../backend/changeNav.php" method="post">
                         <input type="hidden" name="nav" value="main">
                         <button type="submit">
                             <img src="./../assets/icons/home.png" alt="Home icon">
@@ -54,8 +54,8 @@
                     </form>
                 </li>
                 <li>
-                    <form action="changeNav.php" method="post">
-                        <input type="hidden" name="nav" value="heart">
+                    <form action="./../backend/changeNav.php" method="post">
+                        <input type="hidden" name="nav" value="hearts">
                         <button type="submit">
                             <img src="./../assets/icons/heart.png" alt="Heart icon">
                             <span>Hearted</span>
@@ -63,20 +63,11 @@
                     </form>
                 </li>
                 <li>
-                    <form action="changeNav.php" method="post">
+                    <form action="./../backend/changeNav.php" method="post">
                         <input type="hidden" name="nav" value="folders">
                         <button type="submit">
                             <img src="./../assets/icons/folders.png" alt="Folder icon">
                             <span>Folders</span>
-                        </button>
-                    </form>
-                </li>
-                <li>
-                    <form action="changeNav.php" method="post">
-                        <input type="hidden" name="nav" value="lang">
-                        <button type="submit">
-                            <img src="./../assets/icons/langs.png" alt="Language icon">
-                            <span>Languages</span>
                         </button>
                     </form>
                 </li>
@@ -88,14 +79,26 @@
             session_start();
             require_once ('./../backend/classes/Card.php');
 
-            if (isset($_SESSION['links'])) {
-                foreach ($_SESSION['links'] as $linkData) {
-                    $card = new Card($linkData);
-                    $card->renderCard();
+            if(isset($_GET['nav'])){
+                switch ($_GET['nav']) {
+                    case 'main':
+                        require_once('./../backend/pages/Main.php');
+                        break;
+                        case 'hearts':
+                            require_once('./../backend/pages/HeartedLinks.php');
+                            break;
+                        case 'folders':
+                            require_once('./../backend/pages/Folders.php');
+                            break;
+                        default:
+                            require_once('./../backend/pages/Main.php');
+                        break;
                 }
-            } else {
-                echo "<img src='./../assets/images/noLink.png' alt='There is no link'>";
-            }
+
+            }elseif(!isset($_GET['nav'])) {
+                require_once('./../backend/pages/Main.php');
+            } 
+
             ?>
 
         </div>

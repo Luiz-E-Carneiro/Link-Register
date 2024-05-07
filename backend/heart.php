@@ -3,7 +3,7 @@
 session_start();
 
 if(!isset($_POST['link'])){
-    header('Location: ./../frontend/index.php?erro=3');
+    header('Location: ./../frontend/index.php?error=3');
 } else {
     $link = $_POST['link'];
     for ($i=0; $i < count($_SESSION['links']); $i++) { 

@@ -3,7 +3,7 @@
 session_start();
 
 if(!isset($_POST['link'])){
-    header('Location: ./../frontend/index.php?erro=4');
+    header('Location: ./../frontend/index.php?error=4');
 } else {
     $link = $_POST['link'];
 

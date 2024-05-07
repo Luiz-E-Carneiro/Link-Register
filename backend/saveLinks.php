@@ -17,7 +17,7 @@ function newLinkCheck($link) {
     if(isset($_SESSION['links'])){
         foreach ($_SESSION['links'] as $linkData) {
             if($linkData['link'] === $link){
-                header('Location: ./../frontend/index.php?erro=2');
+                header('Location: ./../frontend/index.php?error=2');
                 die();
             }
         }
@@ -25,7 +25,7 @@ function newLinkCheck($link) {
 }
 
 if(!isset($_POST['link'])){
-    header('Location: ./../frontend/index.php?erro=1');
+    header('Location: ./../frontend/index.php?error=1');
 } else {
     $link = $_POST['link'];
     
