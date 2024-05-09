@@ -9,8 +9,8 @@
             }
         }
         if(!$check){
-            echo "<img src='./../assets/images/NoLinkFound.png' alt='No link found'>";
+            echo "<img class='backgroundImage' src='./../assets/images/NoLinkFound.png' alt='No link found'>";
         }
     } else {
-        echo "<img src='./../assets/images/NoLink.png' alt='There is no link added'>";
+        echo "<img class='backgroundImage' src='./../assets/images/NoLink.png' alt='There is no link added'>";
     }

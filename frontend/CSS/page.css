@@ -41,3 +41,7 @@ main {
     flex-wrap: wrap;
     width: 50em;
 }
+
+.backgroundImage {
+    width: 60%;
+}

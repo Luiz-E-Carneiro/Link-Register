@@ -19,7 +19,7 @@ if (isset($_GET['folder'])) {
             $card->renderCard();
         } 
     }
-    if(!$check) echo "<img src='./../assets/images/FolderIsEmpty.png' alt='Empty folder icon'>";
+    if(!$check) echo "<img class='backgroundImage' src='./../assets/images/FolderIsEmpty.png' alt='Empty folder icon'>";
 } else {
     if (isset($_SESSION['foldersNames'])) {
         foreach ($_SESSION['foldersNames'] as $name => $data) {
@@ -38,6 +38,6 @@ if (isset($_GET['folder'])) {
             echo "</form>";
         }
     } else {
-        echo "<img src='./../assets/images/NoLinkFound.png' alt='No link found'>";
+        echo "<img class='backgroundImage' src='./../assets/images/NoLinkFound.png' alt='No link found'>";
     }
 }

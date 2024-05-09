@@ -1,9 +1,9 @@
 <?php
-    if (isset($_SESSION['links'])) {
+    if (isset($_SESSION['links']) AND count($_SESSION['links']) > 0) {
         foreach ($_SESSION['links'] as $linkData) {
             $card = new Card($linkData);
             $card->renderCard();
         }
     } else {
-        echo "<img src='./../assets/images/noLink.png' alt='There is no link'>";
+        echo "<img class='backgroundImage' src='./../assets/images/noLink.png' alt='There is no link'>";
     }   
