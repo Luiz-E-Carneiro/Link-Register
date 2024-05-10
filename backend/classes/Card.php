@@ -17,18 +17,19 @@ final class Card
         if(isset($this->linkData['providerName'])) {
             $card .= '<a href='. $this->linkData['providerUrl'] .'> ' . $this->linkData['providerName'] . '</a>';
         }
-        $card .= 
-        '<form method="post" action="./../backend/heart.php">
-            <input type="hidden" name="link" value="'. $this->linkData['link'] . '">
-            <button type="submit"> 
-                <img src= '. 
-                    ($this->linkData['heart'] === false ? "./../assets/icons/emptyHeart.png" : "./../assets/icons/redHeart.png")
-                . ' alt="Heart icon">
-            </button>
-        </form>';
-    
+        if(isset($this->linkData['heart'])){
+            $card .= 
+            '<form method="post" action="./../backend/heart.php">
+                <input type="hidden" name="link" value="'. $this->linkData['link'] . '">
+                <button type="submit"> 
+                    <img src= '. 
+                        ($this->linkData['heart'] === false ? "./../assets/icons/emptyHeart.png" : "./../assets/icons/redHeart.png")
+                    . ' alt="Heart icon">
+                </button>
+            </form>';
+        }
         $card .= "</div>";        
-
+        
         $card .= '<div class="content-card">';
         if(isset($this->linkData['title'])) {
             $card .= '<p>' . $this->linkData['title'] . '</p>';

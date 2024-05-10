@@ -60,7 +60,9 @@ if(!isset($_POST['link'])){
     if(isset($_POST['selectFolder']) AND $_POST['selectFolder'] != 'none'){
         $name = $_POST['selectFolder'];
         $_SESSION['foldersNames'][$name] = true;
-        $_SESSION['folders'][$name] = $linkData;
+        $linkDataCopy = $linkData;
+        unset($linkDataCopy['heart']);
+        $_SESSION['folders'][$name] = $linkDataCopy;
     }else {
         header('Location: ./../frontend/index.php?');
         die();
