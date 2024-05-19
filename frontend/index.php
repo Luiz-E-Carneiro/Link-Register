@@ -17,13 +17,10 @@
 <body>
 
     <header>
-        <div>Logo</div>
-        <div class="search">
-            <input type="text">
-            <button><span class="material-symbols-outlined">search</span></button>
+        <div class="logo-area">
+        <img src="./../assets/images/Logo.png" alt="Logo">
         </div>
         <div class="header-actions">
-
             <button>Home</button>
             <button>About</button>
             <button>Contact</button>
