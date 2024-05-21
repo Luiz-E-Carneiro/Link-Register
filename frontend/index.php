@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./CSS/card.css">
     <link rel="stylesheet" href="./CSS/folder.css">
     <title>Link Register</title>
+    <link rel="icon" href="./../assets/icons/iconBrowser.png">
 </head>
 
 <body>
