@@ -18,10 +18,6 @@
     gap: .4em;
 }
 
-.sidebar > ul > li:first-of-type  {
-    flex: 2;
-}
-
 .sidebar > ul > li  {
     flex: 1;
 }

@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/page.css">
     <link rel="stylesheet" href="./CSS/sidebar.css">
     <link rel="stylesheet" href="./CSS/linkArea.css">
@@ -21,10 +22,7 @@
         <div class="logo-area">
         <img src="./../assets/images/Logo.png" alt="Logo">
         </div>
-        <div class="header-actions">
-            <button>Home</button>
-            <button>About</button>
-            <button>Contact</button>
+        <div class="header-action">
             <form action="./../backend/destroySession.php" method="get">
                 <input type="submit" value="Destroy Session">
             </form>
@@ -36,13 +34,6 @@
 
         <div class="sidebar">
             <ul>
-                <li>
-                    <div>
-                        Profile_Photo
-                        User_Name
-                        Edit_Icon
-                    </div>
-                </li>
                 <li>
                     <form action="./../backend/changeNav.php" method="post">
                         <input type="hidden" name="nav" value="main">
@@ -105,14 +96,16 @@
 
         <div class="add-link-area" id="link-area">
             <button class="before-add-link" id="before-add-link">
-                <span>Register New Link</span>
-                <span>(+)</span>
+                <span class="textLink">Register New Link</span>
+                <span class="circleLink"><img src="./../assets/icons/add.png" alt="Add Icon"></span>
             </button>
             <div class="adding-link" id="adding-link">
                 <button class="back" id="back">x</button>
                 <form action="./../backend/saveLinks.php" method="post">
-                    <input type="text" name="link" class="link-input" id="link-input">
-                    
+                    <div>
+                        <p>Link:</p>
+                        <input type="text" name="link" class="link-input" id="link-input" placeholder="Add your link here...">
+                    </div>
                     <?php
                     if(isset($_SESSION['foldersNames'])){
                         echo '<select name="selectFolder">';

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Comfortaa", sans-serif;
 }
 
 body {
@@ -23,6 +24,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 2;
+    padding: 0 1em 0 0;
 }
 .logo-area {
     height: 100%;
@@ -56,4 +58,16 @@ main {
 
 .backgroundImage {
     width: 60%;
+}
+
+.header-action > form > input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #0784b5;
+    font-size: 1.1rem;
+    transition: .1s ease-in-out;
+}
+
+.header-action > form > input:hover {
+    border-bottom: 2px solid #0784b5;
 }
