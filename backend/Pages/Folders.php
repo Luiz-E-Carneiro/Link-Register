@@ -12,22 +12,26 @@ echo "</div>";
 if (isset($_GET['folder'])) {
     $folderName = $_GET['folder'];
     $check = false;
-    foreach ($_SESSION['folders'] as $name => $links) {
-        if($folderName === $name AND count($links) > 0){
-            $check = true;
-            $card = new Card($links);
-            $card->renderCard();
-        } 
+    if(isset($_SESSION['folders'])){
+        foreach ($_SESSION['folders'] as $name => $links) {
+            if($folderName === $name AND count($links) > 0){
+                $check = true;
+                $card = new Card($links);
+                $card->renderCard();
+            } 
+        }
+    }else {
+        echo "<img class='backgroundImage' src='./../assets/images/FolderIsEmpty.png' alt='Empty folder icon'>";
     }
-    if(!$check) echo "<img class='backgroundImage' src='./../assets/images/FolderIsEmpty.png' alt='Empty folder icon'>";
+    if(!$check AND isset($_SESSION['folders'])) echo "<img class='backgroundImage' src='./../assets/images/FolderIsEmpty.png' alt='Empty folder icon'>";
 } else {
     if (isset($_SESSION['foldersNames'])) {
         foreach ($_SESSION['foldersNames'] as $name => $data) {
             $folder = new Folder($name);
 
             echo "<form class='folder-div' action='./../backend/showInsideFolder.php' method='post'>";
-            echo '<input type="hidden" name="folderName" value='. $name .'>
-        <button type="submit" class="btn-folder">';
+            echo "<input type='hidden' name='folderName' value='$name'>".
+            '<button type="submit" class="btn-folder">';
             echo '<p>' . $folder->getName() . '</p>';
             if ($_SESSION['foldersNames'][$name] === false) {
                 echo "<img src='./../assets/images/emptyFolder.png' alt='Empty folder icon'>";

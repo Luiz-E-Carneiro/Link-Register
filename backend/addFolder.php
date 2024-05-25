@@ -2,7 +2,7 @@
 require_once('./Classes/Folder.php');
 session_start();
 
-if (!isset($_POST['folderName'])) {
+if (!isset($_POST['folderName']) OR empty($_POST['folderName'])) {
     header('Location: ./../frontend/index.php?nav=folders&error=5');
 } else {
     $name = $_POST['folderName'];
