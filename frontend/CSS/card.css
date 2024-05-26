@@ -19,7 +19,7 @@
 .search-footer>div>a, .header-card>a{
     text-decoration: none;
     font-weight: bold;
-    color: #0784b5;
+    color: var(--dark_blue);
 }
 
 .header-card {

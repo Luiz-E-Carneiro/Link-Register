@@ -41,7 +41,7 @@
     transition: .1s ease-in-out;
 }
 .sidebar > ul > li > form > button:hover  {
-    background-color: #cadeef;
+    background-color: var(--light_blue_gray);
 }
 .sidebar > ul > li > form > button > img {
     width: 36px;

@@ -1,3 +1,11 @@
+:root{
+    --light_blue_gray: #cadeef;
+    --light_blue: #9bd4e4;
+    --normal_blue: #39ace7;
+    --dark_blue: #0784b5;
+    --gray: #dddddd;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -15,7 +23,7 @@ body {
 }
 
 header {
-    background-color: #39ace7;
+    background-color: var(--normal_blue);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +51,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #cadeef;
+    background-color: var(--light_blue_gray);
     flex-grow: 1;
     position: relative;
 }
@@ -63,12 +71,12 @@ main {
 .header-action > form > input{
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #0784b5;
+    border-bottom: 1px solid var(--dark_blue);
     font-size: 1.1rem;
     transition: .1s ease-in-out;
     cursor: pointer;
 }
 
 .header-action > form > input:hover {
-    border-bottom: 2px solid #0784b5;
+    border-bottom: 2px solid var(--dark_blue);
 }

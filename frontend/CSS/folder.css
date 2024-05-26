@@ -1,5 +1,5 @@
 .add-folder-area{
-    background-color: #9bd4e4;
+    background-color: var(--light_blue);
     width: 100%;
     height: 5em;
     border-radius: 0 0 7px 7px;
@@ -39,7 +39,7 @@
     margin-left: 10px;
     padding: 3px;
     border-radius: 4px;
-    background-color: rgb(221, 221, 221);
+    background-color: var(--gray);
     border: none;
     box-shadow: 1px 0 6px rgba(0, 0, 0, .4);
     transition: .1s ease-in-out;
@@ -84,5 +84,5 @@
 }
 
 .btn-folder:hover {
-    background-color: #cadeef;
+    background-color: var(--light_blue_gray);
 }
