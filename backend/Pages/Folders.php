@@ -2,8 +2,8 @@
 echo "<div class='add-folder-area'>";
 
 echo "<form action='./../backend/addFolder.php' method='post'>
-                    <span>Folder's Name:</span>
-                    <input type='text' name='folderName' class='folder-input' id='folder-input'>
+                    <span>Name a Folder:</span>
+                    <input type='text' name='folderName' class='folder-input' id='folder-input' placeholder='Type the name...'>
                     <button type='submit' class='register-folder' id='register-folder'>Add Folder</button>
         </form>";
 

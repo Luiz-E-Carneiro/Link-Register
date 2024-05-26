@@ -9,6 +9,45 @@
     justify-content: center;
     gap: 1em;
 }
+.add-folder-area *{
+    font-size: 1rem;
+}
+
+.add-folder-area > form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+
+.add-folder-area > form > span { 
+    font-weight: bold;
+}
+.add-folder-area > form > input { 
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    transition: .1s ease-in-out;
+}
+
+.add-folder-area > form > input:hover { 
+    border-bottom: 2px solid black;
+}
+
+.add-folder-area > form > button { 
+    margin-left: 10px;
+    padding: 3px;
+    border-radius: 4px;
+    background-color: rgb(221, 221, 221);
+    border: none;
+    box-shadow: 1px 0 6px rgba(0, 0, 0, .4);
+    transition: .1s ease-in-out;
+}
+
+.add-folder-area > form > button:hover {     
+    box-shadow: none;
+}
 
 .folder-div{
     margin: 0 1em;
