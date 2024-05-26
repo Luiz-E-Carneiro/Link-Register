@@ -42,15 +42,19 @@ final class Card
         }
         $card .= "</div>";
         $card .= '<div class="footer-card">';        
-        
-        $card .= '<div>';        
+
+        $card .= '<div class="search-footer">';        
+        $card .= "<div>";
         if(isset($this->linkData['authorName'])) {
             $card .= '<a href='. $this->linkData['authorUrl'] .'>By ' . $this->linkData['authorName'] . '</a>';
         }
+        $card .= "</div>";
+        $card .= "<div>";
         if(isset($this->linkData['url'])) {
-            $card .= '<a href='. $this->linkData['url'] .'>Go to Webpage</a>';
+            $card .= '<a href='. $this->linkData['url'] .'>Visit Page</a>';
         }
-
+        $card .= "</div>";
+        
         $card .= "</div>";
         /*
         If You want to add the language of the page you got the link
@@ -58,19 +62,21 @@ final class Card
             $card .= '<span>'. $this->linkData['language'] . '</span>';
         }
         */
-
+        
+        $card .= "<div class='trash-icon-area'>";
         $card .= '
         <form method="post" action="./../backend/delete.php">
-        <input type="hidden" name="link" value="'. $this->linkData['link'] . '">
+            <input type="hidden" name="link" value="'. $this->linkData['link'] . '">
             <button type="submit">
                 <img src= "./../assets/icons/trash.png" alt="Heart icon">
             </button>
         </form>
-            ';
-            
-            $card .= "</div>";
-            $card .= '</div>';
-            
-            echo $card;
+        ';
+                
+        $card .= "</div>";
+        $card .= "</div>";
+        $card .= '</div>';
+        
+        echo $card;
     }
 }
