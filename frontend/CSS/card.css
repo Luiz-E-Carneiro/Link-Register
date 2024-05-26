@@ -16,7 +16,7 @@
     border: none;
 }
 
-.search-footer>div>a, .header-card>a{
+.search-footer>div>a, .search-footer>div>p,.header-card>a{
     text-decoration: none;
     font-weight: bold;
     color: var(--dark_blue);

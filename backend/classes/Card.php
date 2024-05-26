@@ -34,7 +34,7 @@ final class Card
         if(isset($this->linkData['title'])) {
             $card .= '<p>' . $this->linkData['title'] . '</p>';
         }
-        if(isset($this->linkData['image'])) {
+        if(isset($this->linkData['image']) AND empty(isset($this->linkData['image']))) {
             $card .= '<img src=' . $this->linkData['image'] . " alt='Page image'>";
         }
         if(isset($this->linkData['description'])) {
@@ -45,9 +45,12 @@ final class Card
 
         $card .= '<div class="search-footer">';        
         $card .= "<div>";
-        if(isset($this->linkData['authorName'])) {
+        if(isset($this->linkData['authorName']) AND !empty($this->linkData['authorName'])) {
             $card .= '<a href='. $this->linkData['authorUrl'] .'>By ' . $this->linkData['authorName'] . '</a>';
+        } else {
+            $card .= '<p>By Anonymous</p>';
         }
+
         $card .= "</div>";
         $card .= "<div>";
         if(isset($this->linkData['url'])) {
