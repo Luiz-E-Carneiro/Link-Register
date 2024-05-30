@@ -42,6 +42,6 @@ if (isset($_GET['folder'])) {
             echo "</form>";
         }
     } else {
-        echo "<img class='backgroundImage' src='./../assets/images/NoLinkFound.png' alt='No link found'>";
+        echo "<img class='backgroundImage' src='./../assets/images/NoFolder.png' alt='No link found'>";
     }
 }
