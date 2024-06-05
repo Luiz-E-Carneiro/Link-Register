@@ -34,7 +34,7 @@ final class Card
         if(isset($this->linkData['title'])) {
             $card .= '<p>' . $this->linkData['title'] . '</p>';
         }
-        if(isset($this->linkData['image']) AND empty(isset($this->linkData['image']))) {
+        if(isset($this->linkData['image']) AND !empty(isset($this->linkData['image']))) {
             $card .= '<img src=' . $this->linkData['image'] . " alt='Page image'>";
         }
         if(isset($this->linkData['description'])) {
