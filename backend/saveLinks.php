@@ -13,7 +13,7 @@ $propertiesToCheck = [
     'authorUrl'
     ];
 
-function newLinkCheck($link) {
+function linkVerification($link) {
     if(isset($_SESSION['links'])){
         foreach ($_SESSION['links'] as $linkData) {
             if($linkData['link'] === $link){
@@ -26,12 +26,17 @@ function newLinkCheck($link) {
 
 if(!isset($_POST['link'])){
     header('Location: ./../frontend/index.php?error=1');
-} else {
+    } else {
     $link = $_POST['link'];
+    $info = '';
+    try {
+        $info = $embed->get($link);
+    } catch (\Exception $th) {
+        header('Location: ./../frontend/index.php?error=8');    
+        die();
+    }
+    linkVerification($link);
     
-    newLinkCheck($link);
-    
-    $info = $embed->get($link);
     
     $linkData = array(
         'link' => $link,
