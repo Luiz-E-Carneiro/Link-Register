@@ -62,7 +62,7 @@ if(!isset($_POST['link'])){
         $_SESSION['foldersNames'][$name] = true;
         $linkDataCopy = $linkData;
         unset($linkDataCopy['heart']);
-        $_SESSION['folders'][$name] = $linkDataCopy;
+        $_SESSION['folders'][$name][] = $linkDataCopy;
     }else {
         header('Location: ./../frontend/index.php?');
         die();

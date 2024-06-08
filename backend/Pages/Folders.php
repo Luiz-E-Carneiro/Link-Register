@@ -16,8 +16,10 @@ if (isset($_GET['folder'])) {
         foreach ($_SESSION['folders'] as $name => $links) {
             if($folderName === $name AND count($links) > 0){
                 $check = true;
-                $card = new Card($links);
-                $card->renderCard();
+                foreach ($_SESSION['folders'][$name] as $links) {
+                    $card = new Card($links);
+                    $card->renderCard();
+                }
             } 
         }
     }else {
@@ -33,7 +35,7 @@ if (isset($_GET['folder'])) {
             echo "<input type='hidden' name='folderName' value='$name'>".
             '<button type="submit" class="btn-folder">';
             echo '<p>' . $folder->getName() . '</p>';
-            if ($_SESSION['foldersNames'][$name] === false) {
+            if ($_SESSION['foldersNames'][$name] === false ) {
                 echo "<img src='./../assets/images/emptyFolder.png' alt='Empty folder icon'>";
             } else {
                 echo "<img src='./../assets/images/fullFolder.png' alt='Full folder icon'>";

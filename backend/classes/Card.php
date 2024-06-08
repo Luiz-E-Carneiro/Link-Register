@@ -65,11 +65,18 @@ final class Card
             $card .= '<span>'. $this->linkData['language'] . '</span>';
         }
         */
-        
+    
         $card .= "<div class='trash-icon-area'>";
         $card .= '
-        <form method="post" action="./../backend/delete.php">
-            <input type="hidden" name="link" value="'. $this->linkData['link'] . '">
+        <form method="get" action="./../backend/delete.php">
+            <input type="hidden" name="link" value="'. $this->linkData["link"] . '">
+        ';
+
+        if(isset($_GET['folder'])){
+            $card .= '<input type="hidden" name="folder" value="'. $_GET['folder'] . '">';
+        }
+
+        $card .= '
             <button type="submit">
                 <img src= "./../assets/icons/trash.png" alt="Heart icon">
             </button>
